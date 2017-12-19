@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>AuthenticMonitoreoCore</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>AuthenticMonitoreoCore</name>
 	<description>Demo project for Spring Boot</description>
