@@ -5,7 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.stereotype.Component;
 
-@Component("dataSourceBD")
+@Component("dataSource")
 public class DataSourceBd implements IdataSourceBd {
 	
 	public DataSource obtenerDataSource(){

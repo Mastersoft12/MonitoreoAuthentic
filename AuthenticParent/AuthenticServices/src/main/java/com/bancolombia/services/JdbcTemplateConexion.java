@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class JdbcTemplateConexion implements IjdbcTemplateConexion {
 	
 	@Autowired
-	@Qualifier("dataSourceBD")
+	@Qualifier("dataSource")
 	private IdataSourceBd dataSourceBD;
 	
 	public JdbcTemplate obtenerJdbcTemplate(){
