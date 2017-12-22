@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bancolombia.AuthenticMonitoreoCore.exception.ErrorRest;
 import com.bancolombia.business.ImonitoreoBusiness;
 import com.bancolombia.constantes.MensajeErrorEnum;
+import com.bancolombia.entity.FiltroMonitoreoRechazo;
 import com.bancolombia.entity.Monitoreo;
 import com.bancolombia.exception.DaoException;
 import org.slf4j.Logger;
@@ -38,6 +39,19 @@ public class MonitoreoController {
 			return new ResponseEntity<>(new ErrorRest(MensajeErrorEnum.ERROR_CONSULTADO_MONITOREO.getMensaje()),HttpStatus.BAD_REQUEST);	
 		}
 		return new ResponseEntity<>(resultados,HttpStatus.FOUND);
+	}
+	
+	@GetMapping("/rechazos")
+	public ResponseEntity<?> obtenerFiltroRechazos(){
+		List<FiltroMonitoreoRechazo> resultado = new ArrayList<>();
+		try {
+			resultado = monitoreoBusiness.obtenerFiltroMonitoreoRechazo();
+		} catch (DaoException e) {
+			logger.error(MensajeErrorEnum.ERROR_CONSULTADO_MONITOREO.getMensaje() + e);
+			return new ResponseEntity<>(new ErrorRest(MensajeErrorEnum.ERROR_FILTRO_RECHAZO.getMensaje()),HttpStatus.BAD_REQUEST);
+		}
+		return new ResponseEntity<>(resultado,HttpStatus.FOUND );
+		
 	}
 
 }

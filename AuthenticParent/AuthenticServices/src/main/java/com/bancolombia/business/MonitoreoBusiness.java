@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import com.bancolombia.constantes.MonitoreoEnum;
 import com.bancolombia.dao.ImonitoreoDao;
+import com.bancolombia.entity.FiltroMonitoreoRechazo;
 import com.bancolombia.entity.Monitoreo;
 import com.bancolombia.exception.DaoException;
 
@@ -28,6 +29,10 @@ public class MonitoreoBusiness implements ImonitoreoBusiness {
 		resultado.addAll(monitoreoDao.obtenerMonitoreoRechazadas());	
 		validarResultado(resultado);
 		return resultado;
+	}
+	
+	public List<FiltroMonitoreoRechazo> obtenerFiltroMonitoreoRechazo() throws DaoException{
+		return monitoreoDao.filtarRechazos();	
 	}
 	
 	private void validarResultado(List<Monitoreo> resultado){

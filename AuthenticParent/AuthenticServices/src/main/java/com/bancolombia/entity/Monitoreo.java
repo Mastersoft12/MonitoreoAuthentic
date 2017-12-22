@@ -7,8 +7,8 @@ public class Monitoreo implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private double promedio;
-
-	private String Descripcion;
+	
+	private String descripcion;
 
 	private int cantidad;
 
@@ -18,7 +18,7 @@ public class Monitoreo implements Serializable {
 
 	public Monitoreo(double promedio, String descripcion, int cantidad) {
 		this.promedio = promedio;
-		Descripcion = descripcion;
+		this.descripcion = descripcion;
 		this.cantidad = cantidad;
 	}
 
@@ -30,14 +30,6 @@ public class Monitoreo implements Serializable {
 		this.promedio = promedio;
 	}
 
-	public String getDescripcion() {
-		return Descripcion;
-	}
-
-	public void setDescripcion(String descripcion) {
-		Descripcion = descripcion;
-	}
-
 	public int getCantidad() {
 		return cantidad;
 	}
@@ -45,4 +37,13 @@ public class Monitoreo implements Serializable {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
 }

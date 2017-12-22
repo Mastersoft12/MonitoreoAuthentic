@@ -2,7 +2,8 @@ package com.bancolombia.constantes;
 
 public enum MensajeErrorEnum {
 	
-	ERROR_CONSULTADO_MONITOREO("Error consultando monitoreo");
+	ERROR_CONSULTADO_MONITOREO("Error consultando monitoreo"),
+	ERROR_FILTRO_RECHAZO("Error consultando los rechazos");
 	
 	private String mensaje;	
 	
